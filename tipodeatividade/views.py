@@ -6,3 +6,6 @@ def index(request):
 
 def listar(request):
     return HttpResponse("Lista de Tipos de Atividade")
+
+def consultar(request):
+    return HttpResponse('Consultar')
