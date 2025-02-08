@@ -9,7 +9,6 @@ def listar(request):
 
 def consultar(request):
     return HttpResponse('Consultar')
-
 def show_mensagem(request):
     x='M'
     nome=x+"arcos, tudo bem?"
