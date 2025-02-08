@@ -21,3 +21,7 @@ def show_mensagem(request):
     initial_letter = 'M'
     nome = initial_letter + "arcos, tudo bem?"
     return HttpResponse(f'Bom dia! {nome}')
+
+def detalhe_tipodeatividade(request, ta_codigo):
+    TipoDeAtividade = TipoDeAtividade.objects.get(pk=ta_codigo)
+    return HttpResponse(TipoDeAtividade)
