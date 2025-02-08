@@ -1,16 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from tipodeatividade.models import TipoDeAtividade
+
 # Create your views here.
 def index(request):
-    return HttpResponse ("<DOCType ='html'><html><body><p>Olá, estou no App</p></body></html>")
+    return render(request, 'titulo/index.html')
 
 def listar(request):
-    return HttpResponse("Lista de Tipos de Atividade")
-
-def consultar(request):
-    return HttpResponse('Consultar')
+    lista_atividades = TipoDeAtividade.objects.all()
+    return render(request, 'titulo/listar.html', {'lista_atividades': lista_atividades})
 
 def show_mensagem(request):
-    x='M'
-    nome=x+"arcos, tudo bem?"
-    return HttpResponse('Bom dia!{nome}')
+    initial = 'M'
+    nome = f"{x}arcos, tudo bem?"
+    return HttpResponse(f'Bom dia! {nome}')
