@@ -9,4 +9,4 @@ class Titulo(models.Model):
                                  help_text='Informe a descrição do Titulo')
     
     def __str__(self):
-        return f'{self.codigo} {self.descricao}'
+        return self.descricao
