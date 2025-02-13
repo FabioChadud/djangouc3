@@ -21,7 +21,7 @@ class Turmas(models.Model):
     codigo_tipoatividade = models.ForeignKey(TipoDeAtividade, on_delete=models.CASCADE)
     codigo_instrutor = models.ForeignKey(Instrutores, on_delete=models.CASCADE)
     codigo_aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
-    
+    id_instrutor = models.ForeignKey(Instrutores, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.codigo
