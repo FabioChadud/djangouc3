@@ -5,7 +5,7 @@ from titulo.models import Titulo
 
 class Instrutores(models.Model):
     
-    id = models.AutoField(primary_key=True, 
+    codigo = models.AutoField(primary_key=True, 
                               help_text='ID do Instrutor')
     rg = models.CharField(max_length=70, null=False,
                                  help_text='rg do Instrutor')
@@ -20,4 +20,4 @@ class Instrutores(models.Model):
     codigo_titulo = models.ForeignKey(Titulo, on_delete=models.SET_NULL, null=True, blank=True, db_column='codigo_titulo',)
     
     def __str__(self):
-        return f'{self.codigo} {self.descricao}'
+        return self.codigo
