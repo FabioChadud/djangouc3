@@ -17,7 +17,7 @@ class Instrutores(models.Model):
                                  help_text='telefone do Instrutor')
     ddd = models.CharField(max_length=70, null=False,
                                  help_text='ddd do Instrutor')
-    codigo_titulo = models.ForeignKey(Titulo, on_delete=models.SET_NULL, null=True, blank=True, db_column='codigo_titulo',)
+    codigo_titulo = models.ForeignKey(Titulo, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.codigo

@@ -18,9 +18,9 @@ class Turmas(models.Model):
                                  help_text='Informe a data de Inicio:')
     datafinal = models.DateField(max_length=70, null=True, blank=True,
                                 help_text='Informe a data de Término:')
-    codigo_tipoatividade = models.ForeignKey(TipoDeAtividade, on_delete=models.SET_NULL, null=True, blank=True, db_column='codigo_tipodeatividade',)
-    codigo_instrutor = models.ForeignKey(Instrutores, on_delete=models.SET_NULL, null=True, blank=True, db_column='codigo_instrutor',)
-    codigo_aluno = models.ForeignKey(Aluno, on_delete=models.SET_NULL, null=True, blank=True, db_column='codigo_aluno',)
+    codigo_tipoatividade = models.ForeignKey(TipoDeAtividade, on_delete=models.CASCADE)
+    codigo_instrutor = models.ForeignKey(Instrutores, on_delete=models.CASCADE)
+    codigo_aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
     
     
     def __str__(self):
