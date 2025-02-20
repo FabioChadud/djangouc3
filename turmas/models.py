@@ -33,7 +33,7 @@ class TurmaAluno(models.Model):
     id_aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE,
                                  help_text="Número da matrícula do Aluno.")
     data_inicio_maricula = models.DateField(null=False, 
-                                            default=timezone.now(), 
+                                            default=timezone.now, 
                                             help_text='Informe a data de Inicio da Matrícula:')
     data_fim_matricula = models.DateField(null=True, blank=True,
                                           help_text='Informe a data de Término da Matrícula:')
@@ -48,7 +48,7 @@ class Ausencia(models.Model):
     id_aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE,
                                  help_text="Número da matrícula do Aluno.")
     data_ausencia = models.DateField(null=False,
-                                     default=timezone.now(),
+                                     default=timezone.now,
                                      help_text='Informe a data da Ausência:')
     justificativa = models.CharField(max_length=200, null=False,
                                      help_text='Informe a Justificativa da Ausência:')
