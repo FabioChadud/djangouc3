@@ -1,0 +1,33 @@
+
+<main class="continer m-2 mx-auto my-front-family">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th>Curso</th>
+                    <th>Matrícula</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($alunos as $aluno) : ?>
+                    <tr>
+                        <td><?= $aluno->getNome() ?></td>
+                        <td><?= $aluno->getCpf() ?></td>
+                        <td><?= $aluno->getTelefone() ?></td>
+                        <td><?= $aluno->getEmail() ?></td>
+                        <td><?= $aluno->getCurso()->getNome() ?></td>
+                        <td><?= $aluno->getMatricula() ?></td>
+                        <td>
+                            <a href="<?= URL ?>aluno/editar/<?= $aluno->getId() ?>" class="btn btn-warning">Editar</a>
+                            <a href="<?= URL ?>aluno/excluir/<?= $aluno->getId() ?>" class="btn btn-danger">Excluir</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+</main>
