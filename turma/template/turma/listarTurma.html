@@ -8,8 +8,8 @@
 <div class="collapse navbar-collapse justify-content-end" id="mynavbar">
     <div class="navbar-nav">
         <a href="/" class="nav-link">Início</a>
-        <a href="{% url 'titulo:cadastro' %}" class="nav-link">Cadastrar</a>
-        <a href="{% url 'titulo:listar' %}" class="nav-link">Listar</a>
+        <a href="{% url 'turma:cadastro' %}" class="nav-link">Cadastrar</a>
+        <a href="{% url 'turma:listar' %}" class="nav-link">Listar</a>
     </div>
 </div>
 {% endblock %}
@@ -19,11 +19,11 @@
 
     <div class="row">
         <div class="col text-center m-0">
-            <h2 class="mt-2 mb-5 my-h2">Lista de Títulos</h2>
+            <h2 class="mt-2 mb-5 my-h2">Lista de Turmas</h2>
         </div>
     </div>
 
-    {% if titulos %}
+    {% if turmas %}
 
         <!-- tabela responsiva -->
         <div class="table-responsive">
@@ -44,17 +44,29 @@
                     <!-- linhas -->
                     <tr>
                         <!-- colunas cabecalho -->
-                        <th>codigo</th>
-                        <th>descricao</th>                       
+                        <th>Número</th>
+                        <th>Horário da Aula</th>
+                        <th>Duração da Aula</th>
+                        <th>Data de inicio</th>
+                        <th>Data Final</th>
+                        <th>Código da Atividade</th>                       
+                        <th>Matrícula do Monitor</th>
+                        <th>ID do Instrutor</th>
                     </tr>
                 </thead>
 
                 <!-- linhas -->
-                {% for titulo in titulos %}
+                {% for turma in turmas %}
 
                     <tr>
-                        <td> {{ titulo.codigo }} </td>
-                        <td> {{ titulo.descricao }} </td>
+                        <td> {{ turma.numero }} </td>
+                        <td> {{ turma.horario_aula }} </td>
+                        <td> {{ turma.duracao_aula }} </td>
+                        <td> {{ turma.data_inicial }} </td>
+                        <td> {{ turma.data_final }} </td>
+                        <td> {{ turma.codigo_atividade }} </td>
+                        <td> {{ turma.matricula_monitor }} </td>
+                        <td> {{ turma.id_instrutor }} </td>
                         <td> -- </td>
                     </tr>
                 
@@ -67,7 +79,7 @@
     {% else %}
 
         <div class="text-danger">
-            <p>Não há títulos cadastrados.</p>
+            <p>Não há trumas cadastradas.</p>
         </div>
 
     {% endif %}

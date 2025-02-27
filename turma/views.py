@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from turma.models import Turma
-
+from turma.forms import TurmaForm
 # Create your views here.
 def listar(request):
     lista_turma = Turma.objects.all()

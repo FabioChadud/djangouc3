@@ -9,7 +9,7 @@ def listar(request):
     lista_titulo = Titulo.objects.all
     contexto = {
         'titulos': lista_titulo
-}
+    }
     return render(request, 'titulo/listarTitulos.html', context=contexto)
 
 def carregar_cadastro(request):
@@ -21,5 +21,5 @@ def cadastrar(request):
         dados_titulo = form.cleaned_data
         titulo = Titulo(descricao=dados_titulo['descricao'])
         titulo.save()
-        return render(request, 'titulo/cadastrarTitulo.html')
+    return render(request, 'titulo/cadastrarTitulo.html')
     

@@ -8,8 +8,8 @@
 <div class="collapse navbar-collapse justify-content-end" id="mynavbar">
     <div class="navbar-nav">
         <a href="/" class="nav-link">Início</a>
-        <a href="{% url 'titulo:cadastro' %}" class="nav-link">Cadastrar</a>
-        <a href="{% url 'titulo:listar' %}" class="nav-link">Listar</a>
+        <a href="{% url 'tipodeatividade:cadastro' %}" class="nav-link">Cadastrar</a>
+        <a href="{% url 'tipodeativodade:listar' %}" class="nav-link">Listar</a>
     </div>
 </div>
 {% endblock %}
@@ -19,11 +19,11 @@
 
     <div class="row">
         <div class="col text-center m-0">
-            <h2 class="mt-2 mb-5 my-h2">Lista de Títulos</h2>
+            <h2 class="mt-2 mb-5 my-h2">Lista de Turmas</h2>
         </div>
     </div>
 
-    {% if titulos %}
+    {% if tipodeatividades %}
 
         <!-- tabela responsiva -->
         <div class="table-responsive">
@@ -44,18 +44,19 @@
                     <!-- linhas -->
                     <tr>
                         <!-- colunas cabecalho -->
-                        <th>codigo</th>
-                        <th>descricao</th>                       
+                        <th>Código</th>
+                        <th>Descrição</th>
+                    
                     </tr>
                 </thead>
 
                 <!-- linhas -->
-                {% for titulo in titulos %}
+                {% for tipodeatividade in tipodeatividades %}
 
                     <tr>
-                        <td> {{ titulo.codigo }} </td>
-                        <td> {{ titulo.descricao }} </td>
-                        <td> -- </td>
+                        <td> {{ tipodeatividade.codigo }} </td>
+                        <td> {{ tipodeatividade.descricao }} </td>
+                                          
                     </tr>
                 
                 {% endfor %}
@@ -67,7 +68,7 @@
     {% else %}
 
         <div class="text-danger">
-            <p>Não há títulos cadastrados.</p>
+            <p>Não há tipo de atividade cadastrada.</p>
         </div>
 
     {% endif %}
