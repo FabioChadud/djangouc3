@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <form action="{% url 'instrutor:rg' %}" method="POST" name="frmCadastrarInstrutor" id="idFrmCadastrarInstrutor">
+    <form action="{% url 'instrutor:cadastrar' %}" method="POST" name="frmCadastrarInstrutor" id="idFrmCadastrarInstrutor">
         {% csrf_token %}
         <div class="form-group">
             <label for='rg'>RG</label>
