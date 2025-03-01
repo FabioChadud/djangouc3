@@ -13,7 +13,7 @@ def listar(request):
     return render(request, 'tipodeatividade/listarTipoDeAtividade.html', context=contexto)
 
 def carregar_cadastro(request):
-    return render(request, 'titulo/cadastrarTipoDeAtividade.html')
+    return render(request, 'tipodeatividade/cadastrarTipoDeAtividade.html')
 
 def cadastrar(request):
     form = TipoDeAtividadeForm (request.POST)
